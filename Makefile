@@ -17,7 +17,7 @@ LIBFT_DIR	= lib/libft
 LIBFT_INC	= $(LIBFT_DIR)/include
 LIBFT_BIN	= $(LIBFT_DIR)/bin
 MLX_DIR		= lib/minilibx-linux
-MLX_INC		= $(MLX_DIR)/inc
+MLX_INC		= $(MLX_DIR)
 
 # **************************************************************************** #
 #                                 libraries                                    #
