@@ -1,0 +1,10 @@
+# Build do projeto
+build/
+cub3D
+
+# Arquivos compilados
+*.o
+*.a
+
+# Arquivos do sistema
+.DS_Store
