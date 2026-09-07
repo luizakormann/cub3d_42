@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_window.c                                      :+:      :+:    :+:   */
+/*   put_pixel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/04 13:04:57 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/05 23:36:56 by kaidda-s         ###   ########.fr       */
+/*   Created: 2026/09/05 11:26:09 by kaidda-s          #+#    #+#             */
+/*   Updated: 2026/09/06 00:15:21 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graphics.h"
-#include "mlx.h"
 
-void	*init_window(void *mlx_ptr, int width, int height, char *title)
+#include "graphics.h"
+
+void	put_pixel(t_image *image, int x, int y, int color)
 {
-	return (mlx_new_window(mlx_ptr, width, height, title));
+	char	*pixel;
+
+	if (x < 0 || x >= image->width
+		|| y < 0 || y >= image->height)
+		return ;
+	pixel = image->addr + (y * image->line_length)
+		+ (x * (image->bits_per_pixel / 8));
+	*(unsigned int *)pixel = color;
 }

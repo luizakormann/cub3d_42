@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 13:59:42 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/04 19:58:07 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/05 23:33:19 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	init_graphics(t_game *game)
 
 void	destroy_graphics(t_game *game)
 {
+	if (game->image.ptr)
+		mlx_destroy_image(game->mlx_ptr, game->image.ptr);
 	if (game->window)
 		mlx_destroy_window(game->mlx_ptr, game->window);
 	if (game->mlx_ptr)
