@@ -2,6 +2,7 @@
 #include "mlx.h"
 #include <stddef.h>
 #include "parser.h"
+#include "error_utils.h"
 
 static int	close_window(void *param)
 {
@@ -22,18 +23,24 @@ static int	handle_key(int keycode, void *param)
 int	main(int argc, char **argv)
 {
 	t_game	game;
+	t_data	data;
 
 	if (argc != 2 || !valid_extension(argv[1]))
 		return (1);
-
+	if (parse_cub_file(argv[1], &data) < 0)
+		return (1);
 	game.mlx_ptr = NULL;
 	game.window = NULL;
 	game.image.ptr = NULL;
 	if (init_graphics(&game))
+	{
+		free_data(&data);
 		return (1);
+	}
 	if (init_image(&game))
 	{
 		destroy_graphics(&game);
+		free_data(&data);
 		return (1);
 	}
 	mlx_key_hook(game.window, handle_key, &game);
