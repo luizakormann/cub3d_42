@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:08:32 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 19:26:05 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 20:42:07 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct s_textures
 typedef struct s_data
 {
 	t_textures	tex;
-	char		*floor_rgb;
-	char		*ceiling_rgb;
+	int			floor_color;
+	int			ceiling_color;
 	char		*map_line;
 	int			flags;
 }t_data;
@@ -61,12 +61,15 @@ int		parse_elements(int fd, t_data *data);
 //parse_texture.c
 int		open_texture(char *path);
 int		set_texture(char **dst, char *value, int flag, t_data *data);
-int		set_color(char **dst, char *value, int flag, t_data *data);
+int		set_color(int *dst, char *value, int flag, t_data *data);
 
 //parse_utils.c
 int		is_blank_line(char *line);
 char	*trim_identifier(char *line, char *id);
 int		is_map_line(char *line);
 int		check_all_elements(t_data *data);
+
+//parse_color.c
+int		parse_color(char *raw, int *color);
 
 #endif

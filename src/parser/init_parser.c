@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:59:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 19:18:23 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 20:44:35 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static void	init_data(t_data *data)
 	data->tex.so = NULL;
 	data->tex.we = NULL;
 	data->tex.ea = NULL;
-	data->floor_rgb = NULL;
-	data->ceiling_rgb = NULL;
+	data->floor_color = 0;
+	data->ceiling_color = 0;
 	data->map_line = NULL;
 	data->flags = 0;
 }

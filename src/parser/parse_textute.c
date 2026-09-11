@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:49:37 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 19:20:31 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 20:32:57 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	strip_newline(char *str);
 int	        open_texture(char *path);
 int	        set_texture(char **dst, char *value, int flag, t_data *data);
-int	        set_color(char **dst, char *value, int flag, t_data *data);
+int	        set_color(int *dst, char *value, int flag, t_data *data);
 
 static void	strip_newline(char *str)
 {
@@ -65,9 +65,10 @@ int	set_texture(char **dst, char *value, int flag, t_data *data)
 	return (0);
 }
  
-int	set_color(char **dst, char *value, int flag, t_data *data)
+int	set_color(int *dst, char *value, int flag, t_data *data)
 {
 	char	*copy;
+	int		color;
  
 	if (data->flags & flag)
 	{
@@ -81,7 +82,13 @@ int	set_color(char **dst, char *value, int flag, t_data *data)
 		return (-1);
 	}
     strip_newline(copy);
-	*dst = copy;
+	if (parse_color(copy, &color) < 0)
+	{
+		free(copy);
+		return (-1);
+	}
+	free(copy);
+	*dst = color;
 	data->flags |= flag;
 	return (0);
 }

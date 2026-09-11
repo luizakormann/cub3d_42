@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:59:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 19:19:23 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 20:28:55 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	parse_line(char *line, t_data *data)
 		return (set_texture(&data->tex.ea, value, FLAG_EA, data));
 	value = trim_identifier(line, ID_F);
 	if (value)
-		return (set_color(&data->floor_rgb, value, FLAG_F, data));
+		return (set_color(&data->floor_color, value, FLAG_F, data));
 	value = trim_identifier(line, ID_C);
 	if (value)
-		return (set_color(&data->ceiling_rgb, value, FLAG_C, data));
+		return (set_color(&data->ceiling_color, value, FLAG_C, data));
 	print_error("Invalid element identifier");
 	return (-1);
 }
