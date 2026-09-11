@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graphics.h"
+#include "game.h"
 #include "mlx.h"
 #include <stddef.h>
 

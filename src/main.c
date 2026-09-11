@@ -1,6 +1,7 @@
 #include "graphics.h"
 #include "mlx.h"
 #include <stddef.h>
+#include "game.h"
 
 static int	close_window(void *param)
 {
@@ -25,6 +26,8 @@ int	main(void)
 	game.mlx_ptr = NULL;
 	game.window = NULL;
 	game.image.ptr = NULL;
+	init_map(&game);
+	init_player(&game);
 	if (init_graphics(&game))
 		return (1);
 	if (init_image(&game))

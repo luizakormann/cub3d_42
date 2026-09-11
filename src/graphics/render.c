@@ -6,11 +6,13 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 11:25:52 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/06 00:02:44 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/08 00:00:44 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
+#include "game.h"
+#include "raycasting.h"
 #include "mlx.h"
 
 static void	render_background(t_game *game)
@@ -42,7 +44,8 @@ int	render_frame(void *param)
 
 	game = (t_game *)param;
 	render_background(game);
+	render_rays(game);
 	mlx_put_image_to_window(game->mlx_ptr, game->window,
-			game->image.ptr, 0, 0);
+		game->image.ptr, 0, 0);
 	return (0);
 }

@@ -6,13 +6,14 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 13:59:42 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/05 23:33:19 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/08 00:00:26 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 #include "mlx.h"
 #include <stdlib.h>
+#include "game.h"
 
 int	init_graphics(t_game *game)
 {
