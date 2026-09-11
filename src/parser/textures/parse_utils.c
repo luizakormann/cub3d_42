@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:45:34 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 19:21:23 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 23:32:14 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	    is_blank_line(char *line);
 char	*trim_identifier(char *line, char *id);
 int	    is_map_line(char *line);
 int	    check_all_elements(t_data *data);
+void	strip_newline(char *str);
 
 int	is_blank_line(char *line)
 {
@@ -68,4 +69,13 @@ int	check_all_elements(t_data *data)
 		return (-1);
 	}
 	return (0);
+}
+
+void	strip_newline(char *str)
+{
+	int	len;
+ 
+	len = ft_strlen(str);
+	if (len > 0 && str[len - 1] == '\n')
+		str[len - 1] = '\0';
 }

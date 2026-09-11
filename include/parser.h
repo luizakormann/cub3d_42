@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:08:32 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 20:42:07 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/11 00:47:04 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@
 # define FLAG_C 32
 # define FLAG_ALL (FLAG_NO | FLAG_SO | FLAG_WE | FLAG_EA | FLAG_F | FLAG_C)
 
+# define PI 3.14159265358979323846
+
 typedef struct s_textures
 {
 	char	*no;
@@ -41,6 +43,14 @@ typedef struct s_textures
 	char	*ea;
 }t_textures;
 
+typedef struct s_player
+{
+	int		x;
+	int		y;
+	char	dir;
+	double	angle;
+}t_player;
+
 typedef struct s_data
 {
 	t_textures	tex;
@@ -48,6 +58,8 @@ typedef struct s_data
 	int			ceiling_color;
 	char		*map_line;
 	int			flags;
+	char		**grid;
+	t_player	player;
 }t_data;
 
 //init_parser.c
@@ -68,8 +80,27 @@ int		is_blank_line(char *line);
 char	*trim_identifier(char *line, char *id);
 int		is_map_line(char *line);
 int		check_all_elements(t_data *data);
+void	strip_newline(char *str);
 
 //parse_color.c
 int		parse_color(char *raw, int *color);
+
+//flood_fill.c
+int		check_closed_map(t_data *data);
+
+//read_map.c
+char	**read_map(int fd, char *first_line);
+int		validate_map(t_data *data);
+
+//validate_chars.c
+int		validate_map_chars(t_data *data);
+
+//map_utils.c
+int		map_height(char **grid);
+int		map_width(char **grid, int height);
+
+//find_player.c
+int		find_player(t_data *data);
+
 
 #endif

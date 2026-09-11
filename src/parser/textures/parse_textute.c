@@ -6,26 +6,16 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:49:37 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 20:32:57 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 23:31:36 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "error_utils.h"
  
-static void	strip_newline(char *str);
 int	        open_texture(char *path);
 int	        set_texture(char **dst, char *value, int flag, t_data *data);
 int	        set_color(int *dst, char *value, int flag, t_data *data);
-
-static void	strip_newline(char *str)
-{
-	int	len;
- 
-	len = ft_strlen(str);
-	if (len > 0 && str[len - 1] == '\n')
-		str[len - 1] = '\0';
-}
 
 int	open_texture(char *path)
 {

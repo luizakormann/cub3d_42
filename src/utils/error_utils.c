@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:43:19 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 20:45:48 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/10 23:41:22 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	print_error(char *msg)
  
 void	free_data(t_data *data)
 {
+	int	i;
+	
 	if (data->tex.no)
 		free(data->tex.no);
 	if (data->tex.so)
@@ -31,4 +33,14 @@ void	free_data(t_data *data)
 		free(data->tex.ea);
 	if (data->map_line)
 		free(data->map_line);
+	if (data->grid)
+	{
+		i = 0;
+		while (data->grid[i])
+		{
+			free(data->grid[i]);
+			i++;
+		}
+		free(data->grid);
+	}
 }
