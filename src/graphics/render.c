@@ -25,9 +25,9 @@ static void	render_background(t_game *game)
 	while (y < game->image.height)
 	{
 		if (y < game->image.height / 2)
-			color = CEILING_COLOR;
+			color = game->ceiling_color;
 		else
-			color = FLOOR_COLOR;
+			color = game->floor_color;
 		x = 0;
 		while (x < game->image.width)
 		{
