@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 12:45:47 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/08 23:33:13 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/16 18:17:05 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@
 # define CEILING_COLOR 0x87CEEB
 # define FLOOR_COLOR 0x228B22
 # define WALL_COLOR 0x8B4513
+
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
+
+# define EVENT_KEYPRESS 2
+# define EVENT_KEYRELEASE 3
+# define MASK_KEYPRESS (1L << 0)
+# define MASK_KEYRELEASE (1L << 1)
 
 typedef struct s_image
 {

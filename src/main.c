@@ -4,6 +4,7 @@
 #include "error_utils.h"
 #include "game.h"
 #include "game_data.h"
+#include "player.h"
 
 static int	close_window(void *param)
 {
@@ -14,18 +15,12 @@ static int	close_window(void *param)
 	return (0);
 }
 
-static int	handle_key(int keycode, void *param)
-{
-	if (keycode == KEY_ESC)
-		close_window(param);
-	return (0);
-}
-
 static int	start_graphics(t_game *game, t_data *data)
 {
 	game->mlx_ptr = NULL;
 	game->window = NULL;
 	game->image.ptr = NULL;
+	game->keys = (t_keys){0};
 	if (init_graphics(game))
 	{
 		free_data(data);
@@ -58,7 +53,8 @@ int	main(int argc, char **argv)
 		free_data(&data);
 		return (1);
 	}
-	mlx_key_hook(game.window, handle_key, &game);
+	mlx_hook(game.window, EVENT_KEYPRESS, MASK_KEYPRESS, key_press, &game);
+	mlx_hook(game.window, EVENT_KEYRELEASE, MASK_KEYRELEASE, key_release, &game);
 	mlx_hook(game.window, EVENT_DESTROY, 0, close_window, &game);
 	mlx_loop_hook(game.mlx_ptr, render_frame, &game);
 	mlx_loop(game.mlx_ptr);

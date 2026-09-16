@@ -67,6 +67,13 @@ $(LIBFT): $(LIBFT_DIR)/Makefile
 $(MLX):
 	@$(MAKE) -C $(MLX_DIR) --silent
 
+LEAKS	:=	valgrind --leak-check=full --show-leak-kinds=all\
+		--track-origins=yes --log-file=valgrind-out.txt --track-fds=yes
+
+val_leaks: all
+	@$(LEAKS) ./$(NAME) maps/open_map.cub
+	@echo "./cub3d ready to use with valgrind"
+
 clean:
 	@$(RM) $(OBJ_DIR)
 	@$(MAKE) clean -C $(LIBFT_DIR) --silent

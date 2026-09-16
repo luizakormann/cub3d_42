@@ -28,6 +28,16 @@ typedef enum e_tex_id
 	TEX_EA
 }	t_tex_id;
 
+typedef struct s_keys
+{
+	int	w;
+	int	a;
+	int	s;
+	int	d;
+	int	left;
+	int	right;
+}	t_keys;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
@@ -36,6 +46,7 @@ typedef struct s_game
 	t_image		textures[4];
 	t_map		map;
 	t_camera	player;
+	t_keys		keys;
 	int			floor_color;
 	int			ceiling_color;
 } t_game;
