@@ -52,6 +52,12 @@ int	main(int argc, char **argv)
 	load_game_data(&game, &data);
 	if (start_graphics(&game, &data))
 		return (1);
+	if (init_textures(&game, &data))
+	{
+		destroy_graphics(&game);
+		free_data(&data);
+		return (1);
+	}
 	mlx_key_hook(game.window, handle_key, &game);
 	mlx_hook(game.window, EVENT_DESTROY, 0, close_window, &game);
 	mlx_loop_hook(game.mlx_ptr, render_frame, &game);
