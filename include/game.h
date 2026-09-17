@@ -20,13 +20,33 @@ typedef struct s_camera
 	double	plane_y;
 } t_camera;
 
+typedef enum e_tex_id
+{
+	TEX_NO,
+	TEX_SO,
+	TEX_WE,
+	TEX_EA
+}	t_tex_id;
+
+typedef struct s_keys
+{
+	int	w;
+	int	a;
+	int	s;
+	int	d;
+	int	left;
+	int	right;
+}	t_keys;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*window;
 	t_image		image;
+	t_image		textures[4];
 	t_map		map;
 	t_camera	player;
+	t_keys		keys;
 	int			floor_color;
 	int			ceiling_color;
 } t_game;

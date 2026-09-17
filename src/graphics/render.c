@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 11:25:52 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/08 00:00:44 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/16 18:39:51 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "game.h"
 #include "raycasting.h"
 #include "mlx.h"
+#include "player.h"
 
 static void	render_background(t_game *game)
 {
@@ -43,6 +44,7 @@ int	render_frame(void *param)
 	t_game	*game;
 
 	game = (t_game *)param;
+	move_player(game);
 	render_background(game);
 	render_rays(game);
 	mlx_put_image_to_window(game->mlx_ptr, game->window,
