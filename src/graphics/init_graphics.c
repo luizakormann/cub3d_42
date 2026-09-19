@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_graphics.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 13:59:42 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/16 17:45:31 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:20:50 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	destroy_graphics(t_game *game)
 			mlx_destroy_image(game->mlx_ptr, game->textures[i].ptr);
 		i++;
 	}
-	
+
 	if (game->image.ptr)
 		mlx_destroy_image(game->mlx_ptr, game->image.ptr);
 	if (game->window)

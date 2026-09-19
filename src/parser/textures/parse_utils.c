@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:45:34 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 23:32:14 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:12:22 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "error_utils.h"
 
-int	    is_blank_line(char *line);
+int		is_blank_line(char *line);
 char	*trim_identifier(char *line, char *id);
-int	    is_map_line(char *line);
-int	    check_all_elements(t_data *data);
+int		is_map_line(char *line);
+int		check_all_elements(t_data *data);
 void	strip_newline(char *str);
 
 int	is_blank_line(char *line)
 {
 	int	i;
- 
+
 	i = 0;
 	while (line[i])
 	{
@@ -32,11 +32,11 @@ int	is_blank_line(char *line)
 	}
 	return (1);
 }
- 
+
 char	*trim_identifier(char *line, char *id)
 {
 	int	len;
- 
+
 	len = ft_strlen(id);
 	if ((int)ft_strlen(line) <= len)
 		return (NULL);
@@ -48,7 +48,7 @@ char	*trim_identifier(char *line, char *id)
 		len++;
 	return (line + len);
 }
- 
+
 int	is_map_line(char *line)
 {
 	if (is_blank_line(line))
@@ -60,7 +60,7 @@ int	is_map_line(char *line)
 		return (0);
 	return (1);
 }
- 
+
 int	check_all_elements(t_data *data)
 {
 	if ((data->flags & FLAG_ALL) != FLAG_ALL)
@@ -74,7 +74,7 @@ int	check_all_elements(t_data *data)
 void	strip_newline(char *str)
 {
 	int	len;
- 
+
 	len = ft_strlen(str);
 	if (len > 0 && str[len - 1] == '\n')
 		str[len - 1] = '\0';

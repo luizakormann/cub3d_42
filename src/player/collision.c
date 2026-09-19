@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collision.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:07:09 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/16 20:46:14 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:36:40 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	is_wall(t_game *game, double x, double y)
 
 	mx = (int)x;
 	my = (int)y;
-
 	if (my < 0 || my >= game->map.height || mx < 0)
 		return (1);
 	if (mx >= (int)ft_strlen(game->map.grid[my]))

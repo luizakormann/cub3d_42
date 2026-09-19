@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:08:32 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/11 00:47:04 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/17 23:55:54 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define ID_EA "EA"
 # define ID_F "F"
 # define ID_C "C"
- 
+
 # define FLAG_NO 1
 # define FLAG_SO 2
 # define FLAG_WE 4
@@ -32,7 +32,6 @@
 # define FLAG_F 16
 # define FLAG_C 32
 # define FLAG_ALL (FLAG_NO | FLAG_SO | FLAG_WE | FLAG_EA | FLAG_F | FLAG_C)
-
 # define PI 3.14159265358979323846
 
 typedef struct s_textures
@@ -41,7 +40,7 @@ typedef struct s_textures
 	char	*so;
 	char	*we;
 	char	*ea;
-}t_textures;
+}	t_textures;
 
 typedef struct s_player
 {
@@ -49,7 +48,7 @@ typedef struct s_player
 	int		y;
 	char	dir;
 	double	angle;
-}t_player;
+}	t_player;
 
 typedef struct s_data
 {
@@ -60,7 +59,7 @@ typedef struct s_data
 	int			flags;
 	char		**grid;
 	t_player	player;
-}t_data;
+}	t_data;
 
 //init_parser.c
 int		valid_extension(char *path);
@@ -69,7 +68,7 @@ int		parse_cub_file(char *path, t_data *data);
 //parse_elements.c
 int		parse_line(char *line, t_data *data);
 int		parse_elements(int fd, t_data *data);
- 
+
 //parse_texture.c
 int		open_texture(char *path);
 int		set_texture(char **dst, char *value, int flag, t_data *data);
@@ -101,6 +100,5 @@ int		map_width(char **grid, int height);
 
 //find_player.c
 int		find_player(t_data *data);
-
 
 #endif

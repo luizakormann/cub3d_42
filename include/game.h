@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/17 23:51:13 by kaidda-s          #+#    #+#             */
+/*   Updated: 2026/09/17 23:56:39 by kaidda-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GAME_H
 # define GAME_H
 
@@ -8,7 +20,7 @@ typedef struct s_map
 	char	**grid;
 	int		width;
 	int		height;
-} t_map;
+}	t_map;
 
 typedef struct s_camera
 {
@@ -18,7 +30,7 @@ typedef struct s_camera
 	double	dir_y;
 	double	plane_x;
 	double	plane_y;
-} t_camera;
+}	t_camera;
 
 typedef enum e_tex_id
 {
@@ -49,7 +61,7 @@ typedef struct s_game
 	t_keys		keys;
 	int			floor_color;
 	int			ceiling_color;
-} t_game;
+}	t_game;
 
 int		init_graphics(t_game *game);
 void	destroy_graphics(t_game *game);

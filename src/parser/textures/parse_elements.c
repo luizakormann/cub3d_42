@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_elements.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:59:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 20:28:55 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:15:58 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int			parse_elements(int fd, t_data *data);
 int	parse_line(char *line, t_data *data)
 {
 	char	*value;
- 
+
 	if (is_blank_line(line))
 		return (0);
 	value = trim_identifier(line, ID_NO);
@@ -60,13 +60,13 @@ static int	handle_line(char *line, t_data *data, char **map_line)
 	free(line);
 	return (0);
 }
- 
+
 int	parse_elements(int fd, t_data *data)
 {
 	char	*line;
 	char	*map_line;
 	int		ret;
- 
+
 	map_line = NULL;
 	line = get_next_line(fd);
 	while (line)

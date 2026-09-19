@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_color.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 20:19:28 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 21:04:40 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:17:19 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@ int			parse_color(char *raw, int *color);
 
 static int	parse_component(char *str, int *idx, int *value)
 {
-    int n;
-    int digits;
+	int	n;
+	int	digits;
 
-    n = 0;
-    digits = 0;
-    while (str[*idx] >= '0' && str[*idx] <= '9')
-    {
-        n = n * 10 + (str[*idx] - '0');
+	n = 0;
+	digits = 0;
+	while (str[*idx] >= '0' && str[*idx] <= '9')
+	{
+		n = n * 10 + (str[*idx] - '0');
 		digits++;
 		(*idx)++;
 		if (digits > 3 || n > 255)
 			return (-1);
-    }
-    if (digits == 0)
-        return (-1);
-    *value = n;
-    return (0);
+	}
+	if (digits == 0)
+		return (-1);
+	*value = n;
+	return (0);
 }
 
 int	parse_color(char *raw, int *color)

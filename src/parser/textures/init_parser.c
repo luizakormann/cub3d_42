@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   init_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:59:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/11 00:47:25 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:19:59 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "error_utils.h"
 
-int	        valid_extension(char *path);
+int			valid_extension(char *path);
 static void	init_data(t_data *data);
-int	        parse_cub_file(char *path, t_data *data);
+int			parse_cub_file(char *path, t_data *data);
 
 int	valid_extension(char *path)
 {
@@ -45,11 +45,11 @@ static void	init_data(t_data *data)
 	data->player.angle = 0;
 	data->flags = 0;
 }
- 
+
 int	parse_cub_file(char *path, t_data *data)
 {
 	int	fd;
- 
+
 	init_data(data);
 	fd = open(path, O_RDONLY);
 	if (fd < 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 23:22:05 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/11 17:29:55 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:33:56 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			validate_map(t_data *data);
 
 static char	**add_line_to_grid(char **grid, char *line, int count)
 {
-    char	**new_grid;
+	char	**new_grid;
 	int		i;
 
 	new_grid = malloc(sizeof(char *) * (count + 2));

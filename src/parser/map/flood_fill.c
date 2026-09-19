@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 23:16:04 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/11 17:30:06 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:33:27 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			check_closed_map(t_data *data);
 
 static void	free_visited(char **visited, int height)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (i < height)
@@ -34,7 +34,7 @@ static void	free_visited(char **visited, int height)
 
 static char	**create_visited(int height, int width)
 {
-    char	**visited;
+	char	**visited;
 	int		i;
 
 	visited = malloc(sizeof(char *) * (height + 1));
@@ -57,7 +57,7 @@ static char	**create_visited(int height, int width)
 
 static char	get_char(char **grid, int height, int y, int x)
 {
-    if (y < 0 || y >= height || x < 0)
+	if (y < 0 || y >= height || x < 0)
 		return (' ');
 	if ((int)ft_strlen(grid[y]) <= x)
 		return (' ');
@@ -66,7 +66,7 @@ static char	get_char(char **grid, int height, int y, int x)
 
 static int	flood_fill(char **grid, char **visited, int height, int y, int x)
 {
-    char	c;
+	char	c;
 
 	c = get_char(grid, height, y, x);
 	if (c == ' ')
@@ -87,7 +87,7 @@ static int	flood_fill(char **grid, char **visited, int height, int y, int x)
 
 int	check_closed_map(t_data *data)
 {
-    char	**visited;
+	char	**visited;
 	int		height;
 	int		width;
 	int		result;

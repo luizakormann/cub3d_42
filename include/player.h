@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:05:48 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/16 18:50:05 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/17 23:57:08 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "libft.h"
 # include <math.h>
 # include "mlx.h"
-
 
 # define MOVE_SPEED 0.05
 # define ROT_SPEED 0.03

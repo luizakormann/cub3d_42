@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 23:29:02 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/11 00:42:41 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:30:42 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "error_utils.h"
 
 static double	char_to_angle(char c);
-static void	scan_row(t_data *data, int y, int *count);
-int	find_player(t_data *data);
+static void		scan_row(t_data *data, int y, int *count);
+int				find_player(t_data *data);
 
 static double	char_to_angle(char c)
 {
-    if (c == 'N')
+	if (c == 'N')
 		return (-PI / 2);
 	if (c == 'S')
 		return (PI / 2);
@@ -30,7 +30,7 @@ static double	char_to_angle(char c)
 
 static void	scan_row(t_data *data, int y, int *count)
 {
-    int	x;
+	int	x;
 
 	x = 0;
 	while (data->grid[y][x])
@@ -50,7 +50,7 @@ static void	scan_row(t_data *data, int y, int *count)
 
 int	find_player(t_data *data)
 {
-    int	y;
+	int	y;
 	int	count;
 
 	count = 0;

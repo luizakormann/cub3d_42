@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 12:45:47 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/16 22:17:25 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/18 00:07:35 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_image
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}t_image;
+}	t_image;
 
 void	*init_window(void *mlx_ptr, int width, int height, char *title);
 void	put_pixel(t_image *image, int x, int y, int color);

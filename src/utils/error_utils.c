@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:43:19 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/10 23:41:22 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/19 00:39:34 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	print_error(char *msg)
 	ft_putstr_fd(msg, 2);
 	ft_putstr_fd("\n", 2);
 }
- 
+
 void	free_data(t_data *data)
 {
 	int	i;
-	
+
 	if (data->tex.no)
 		free(data->tex.no);
 	if (data->tex.so)
