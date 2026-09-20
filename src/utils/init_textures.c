@@ -6,11 +6,12 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 17:31:45 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/19 00:38:46 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/19 23:24:35 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_data.h"
+#include "libft.h"
 
 static int	load_textures(t_game *game, t_image *tex, char *path)
 {
@@ -27,6 +28,7 @@ static int	load_textures(t_game *game, t_image *tex, char *path)
 
 int	init_textures(t_game *game, t_data *data)
 {
+	ft_bzero(game->textures, sizeof(game->textures));
 	if (load_textures(game, &game->textures[TEX_NO], data->tex.no))
 		return (1);
 	if (load_textures(game, &game->textures[TEX_SO], data->tex.so))

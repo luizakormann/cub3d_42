@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:59:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/19 00:19:59 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:40:48 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int			valid_extension(char *path);
 static void	init_data(t_data *data);
+static int	parse_map_content(int fd, t_data *data);
 int			parse_cub_file(char *path, t_data *data);
 
 int	valid_extension(char *path)
@@ -31,19 +32,25 @@ int	valid_extension(char *path)
 
 static void	init_data(t_data *data)
 {
-	data->tex.no = NULL;
-	data->tex.so = NULL;
-	data->tex.we = NULL;
-	data->tex.ea = NULL;
-	data->floor_color = 0;
-	data->ceiling_color = 0;
+	ft_bzero(data, sizeof(t_data));
+}
+
+static int	parse_map_content(int fd, t_data *data)
+{
+	data->grid = read_map(fd, data->map_line);
+	close(fd);
+	if (!data->grid)
+	{
+		free_data(data);
+		return (-1);
+	}
 	data->map_line = NULL;
-	data->grid = NULL;
-	data->player.x = 0;
-	data->player.y = 0;
-	data->player.dir = 0;
-	data->player.angle = 0;
-	data->flags = 0;
+	if (validate_map(data) < 0)
+	{
+		free_data(data);
+		return (-1);
+	}
+	return (0);
 }
 
 int	parse_cub_file(char *path, t_data *data)
@@ -63,18 +70,5 @@ int	parse_cub_file(char *path, t_data *data)
 		free_data(data);
 		return (-1);
 	}
-	data->grid = read_map(fd, data->map_line);
-	close(fd);
-	if (!data->grid)
-	{
-		free_data(data);
-		return (-1);
-	}
-	data->map_line = NULL;
-	if (validate_map(data) < 0)
-	{
-		free_data(data);
-		return (-1);
-	}
-	return (0);
+	return (parse_map_content(fd, data));
 }

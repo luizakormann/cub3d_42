@@ -6,13 +6,13 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 23:13:52 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/19 00:41:34 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:53:48 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycasting.h"
 
-static void	set_wall_limits(t_game *game, t_ray *ray)
+static void	setup_wall_calc(t_game *game, t_ray *ray)
 {
 	ray->line_height = (int)(game->image.height / ray->perp_wall_dist);
 	ray->draw_start = -ray->line_height / 2 + game->image.height / 2;
@@ -21,10 +21,6 @@ static void	set_wall_limits(t_game *game, t_ray *ray)
 		ray->draw_start = 0;
 	if (ray->draw_end >= game->image.height)
 		ray->draw_end = game->image.height - 1;
-}
-
-static void	set_wall_x(t_game *game, t_ray *ray)
-{
 	if (ray->side == 0)
 		ray->wall_x = game->player.pos_y
 			+ ray->perp_wall_dist * ray->ray_dir_y;
@@ -85,24 +81,23 @@ void	draw_wall(t_game *game, t_ray *ray, int x)
 {
 	t_image	*tex;
 	int		tex_x;
-	int		tex_y;
 	double	step;
 	double	tex_pos;
 	int		y;
 
-	set_wall_limits(game, ray);
-	set_wall_x(game, ray);
+	setup_wall_calc(game, ray);
 	set_tex_id(ray);
 	tex = &game->textures[ray->tex_id];
 	tex_x = compute_tex_x(ray, tex);
 	step = 1.0 * tex->height / ray->line_height;
-	tex_pos = (ray->draw_start - game->image.height / 2 + ray->line_height / 2) * step;
+	tex_pos = ray->draw_start - game->image.height / 2 + ray->line_height / 2;
+	tex_pos *= step;
 	y = ray->draw_start;
 	while (y <= ray->draw_end)
 	{
-		tex_y = (int)tex_pos;
+		put_pixel(&game->image, x, y,
+			get_texture_pixel(tex, tex_x, (int)tex_pos));
 		tex_pos += step;
-		put_pixel(&game->image, x, y, get_texture_pixel(tex, tex_x, tex_y));
 		y++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 23:16:04 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/19 00:33:27 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:32:23 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	free_visited(char **visited, int height);
 static char	**create_visited(int height, int width);
 static char	get_char(char **grid, int height, int y, int x);
-static int	flood_fill(char **grid, char **visited, int height, int y, int x);
+static int	flood_fill(t_fill *f, int y, int x);
 int			check_closed_map(t_data *data);
 
 static void	free_visited(char **visited, int height)
@@ -64,45 +64,44 @@ static char	get_char(char **grid, int height, int y, int x)
 	return (grid[y][x]);
 }
 
-static int	flood_fill(char **grid, char **visited, int height, int y, int x)
+static int	flood_fill(t_fill *f, int y, int x)
 {
 	char	c;
 
-	c = get_char(grid, height, y, x);
+	c = get_char(f->grid, f->height, y, x);
 	if (c == ' ')
 		return (-1);
-	if (visited[y][x] || c == '1')
+	if (f->visited[y][x] || c == '1')
 		return (0);
-	visited[y][x] = 1;
-	if (flood_fill(grid, visited, height, y - 1, x) < 0)
+	f->visited[y][x] = 1;
+	if (flood_fill(f, y - 1, x) < 0)
 		return (-1);
-	if (flood_fill(grid, visited, height, y + 1, x) < 0)
+	if (flood_fill(f, y + 1, x) < 0)
 		return (-1);
-	if (flood_fill(grid, visited, height, y, x - 1) < 0)
+	if (flood_fill(f, y, x - 1) < 0)
 		return (-1);
-	if (flood_fill(grid, visited, height, y, x + 1) < 0)
+	if (flood_fill(f, y, x + 1) < 0)
 		return (-1);
 	return (0);
 }
 
 int	check_closed_map(t_data *data)
 {
-	char	**visited;
-	int		height;
+	t_fill	f;
 	int		width;
 	int		result;
 
-	height = map_height(data->grid);
-	width = map_width(data->grid, height);
-	visited = create_visited(height, width);
-	if (!visited)
+	f.grid = data->grid;
+	f.height = map_height(data->grid);
+	width = map_width(data->grid, f.height);
+	f.visited = create_visited(f.height, width);
+	if (!f.visited)
 	{
 		print_error("Memory allocation failed");
 		return (-1);
 	}
-	result = flood_fill(data->grid, visited, height,
-			data->player.y, data->player.x);
-	free_visited(visited, height);
+	result = flood_fill(&f, data->player.y, data->player.x);
+	free_visited(f.visited, f.height);
 	if (result < 0)
 	{
 		print_error("Map is not closed (leak detected)");

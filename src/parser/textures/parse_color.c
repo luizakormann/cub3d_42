@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 20:19:28 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/19 00:17:19 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:40:48 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "error_utils.h"
 
 static int	parse_component(char *str, int *idx, int *value);
+static int	get_rgb(char *raw, int *idx, int *val, char sep);
 int			parse_color(char *raw, int *color);
 
 static int	parse_component(char *str, int *idx, int *value)
@@ -37,6 +38,15 @@ static int	parse_component(char *str, int *idx, int *value)
 	return (0);
 }
 
+static int	get_rgb(char *raw, int *idx, int *val, char sep)
+{
+	if (parse_component(raw, idx, val) < 0 || raw[*idx] != sep)
+		return (-1);
+	if (sep == ',')
+		(*idx)++;
+	return (0);
+}
+
 int	parse_color(char *raw, int *color)
 {
 	int	idx;
@@ -45,22 +55,9 @@ int	parse_color(char *raw, int *color)
 	int	b;
 
 	idx = 0;
-	r = 0;
-	g = 0;
-	b = 0;
-	if (parse_component(raw, &idx, &r) < 0 || raw[idx] != ',')
-	{
-		print_error("Invalid RGB format");
-		return (-1);
-	}
-	idx++;
-	if (parse_component(raw, &idx, &g) < 0 || raw[idx] != ',')
-	{
-		print_error("Invalid RGB format");
-		return (-1);
-	}
-	idx++;
-	if (parse_component(raw, &idx, &b) < 0 || raw[idx] != '\0')
+	if (get_rgb(raw, &idx, &r, ',') < 0
+		|| get_rgb(raw, &idx, &g, ',') < 0
+		|| get_rgb(raw, &idx, &b, '\0') < 0)
 	{
 		print_error("Invalid RGB format");
 		return (-1);

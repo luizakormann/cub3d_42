@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 17:08:32 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/17 23:55:54 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:32:23 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include <fcntl.h>
 # include <stdlib.h>
-# include <unistd.h> 
+# include <unistd.h>
 
 # define ID_NO "NO"
 # define ID_SO "SO"
@@ -31,7 +31,7 @@
 # define FLAG_EA 8
 # define FLAG_F 16
 # define FLAG_C 32
-# define FLAG_ALL (FLAG_NO | FLAG_SO | FLAG_WE | FLAG_EA | FLAG_F | FLAG_C)
+# define FLAG_ALL 63
 # define PI 3.14159265358979323846
 
 typedef struct s_textures
@@ -61,44 +61,51 @@ typedef struct s_data
 	t_player	player;
 }	t_data;
 
-//init_parser.c
+typedef struct s_fill
+{
+	char	**grid;
+	char	**visited;
+	int		height;
+}	t_fill;
+
+/* init_parser.c */
 int		valid_extension(char *path);
 int		parse_cub_file(char *path, t_data *data);
 
-//parse_elements.c
+/* parse_elements.c */
 int		parse_line(char *line, t_data *data);
 int		parse_elements(int fd, t_data *data);
 
-//parse_texture.c
+/* parse_texture.c */
 int		open_texture(char *path);
 int		set_texture(char **dst, char *value, int flag, t_data *data);
 int		set_color(int *dst, char *value, int flag, t_data *data);
 
-//parse_utils.c
+/* parse_utils.c */
 int		is_blank_line(char *line);
 char	*trim_identifier(char *line, char *id);
 int		is_map_line(char *line);
 int		check_all_elements(t_data *data);
 void	strip_newline(char *str);
 
-//parse_color.c
+/* parse_color.c */
 int		parse_color(char *raw, int *color);
 
-//flood_fill.c
+/* flood_fill.c */
 int		check_closed_map(t_data *data);
 
-//read_map.c
+/* read_map.c */
 char	**read_map(int fd, char *first_line);
 int		validate_map(t_data *data);
 
-//validate_chars.c
+/* validate_chars.c */
 int		validate_map_chars(t_data *data);
 
-//map_utils.c
+/* map_utils.c */
 int		map_height(char **grid);
 int		map_width(char **grid, int height);
 
-//find_player.c
+/* find_player.c */
 int		find_player(t_data *data);
 
 #endif

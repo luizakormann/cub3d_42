@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 13:59:42 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/19 00:20:50 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:02:00 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	init_graphics(t_game *game)
 void	destroy_graphics(t_game *game)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < 4)
 	{
@@ -43,7 +43,6 @@ void	destroy_graphics(t_game *game)
 			mlx_destroy_image(game->mlx_ptr, game->textures[i].ptr);
 		i++;
 	}
-
 	if (game->image.ptr)
 		mlx_destroy_image(game->mlx_ptr, game->image.ptr);
 	if (game->window)

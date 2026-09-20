@@ -6,7 +6,7 @@
 /*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 12:45:47 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/18 00:07:35 by kaidda-s         ###   ########.fr       */
+/*   Updated: 2026/09/20 00:15:04 by kaidda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 
 # define EVENT_KEYPRESS 2
 # define EVENT_KEYRELEASE 3
-# define MASK_KEYPRESS (1L << 0)
-# define MASK_KEYRELEASE (1L << 1)
+# define MASK_KEYPRESS 1
+# define MASK_KEYRELEASE 2
 
 typedef struct s_image
 {
