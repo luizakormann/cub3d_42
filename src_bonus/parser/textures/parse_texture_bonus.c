@@ -1,0 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_texture_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/10 17:49:37 by luiza             #+#    #+#             */
+/*   Updated: 2026/09/21 20:16:12 by luiza            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "parser_bonus.h"
+#include "error_utils_bonus.h"
+
+int	open_texture(char *path);
+int	set_texture(char **dst, char *value, int flag, t_data *data);
+int	set_color(int *dst, char *value, int flag, t_data *data);
+
+int	open_texture(char *path)
+{
+	int	fd;
+
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		return (-1);
+	close(fd);
+	return (0);
+}
+
+int	set_texture(char **dst, char *value, int flag, t_data *data)
+{
+	char	*copy;
+
+	if (data->flags & flag)
+	{
+		print_error("Duplicate texture identifier");
+		return (-1);
+	}
+	copy = ft_strdup(value);
+	if (!copy)
+	{
+		print_error("Memory allocation failed");
+		return (-1);
+	}
+	strip_newline(copy);
+	if (open_texture(copy) < 0)
+	{
+		free(copy);
+		print_error("Texture file not found or no permission");
+		return (-1);
+	}
+	*dst = copy;
+	data->flags |= flag;
+	return (0);
+}
+
+int	set_color(int *dst, char *value, int flag, t_data *data)
+{
+	char	*copy;
+	int		color;
+
+	if (data->flags & flag)
+	{
+		print_error("Duplicate color identifier");
+		return (-1);
+	}
+	copy = ft_strdup(value);
+	if (!copy)
+	{
+		print_error("Memory allocation failed");
+		return (-1);
+	}
+	strip_newline(copy);
+	if (parse_color(copy, &color) < 0)
+	{
+		free(copy);
+		return (-1);
+	}
+	free(copy);
+	*dst = color;
+	data->flags |= flag;
+	return (0);
+}
