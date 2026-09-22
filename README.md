@@ -19,7 +19,7 @@ This project combines several important areas of low-level programming, includin
 - Binary and geometric logic
 - Event handling
 - Window management
-- Parsing and validation
+- Map parsing, flood-fill validation & Error handling
 - Memory management
 
 The project is implemented in **C** using the **MiniLibX** graphics library.
@@ -42,14 +42,26 @@ The project is implemented in **C** using the **MiniLibX** graphics library.
 
 ---
 
+### 🌟 Bonus Features 
+
+| Feature | Description | 
+|---------|-------------| 
+| 🚪 **Interactive Doors** | Walls marked as `D` can be opened and closed in real-time with an action key. |
+| 🗺️ **Dynamic Minimap** | Interactive 2D overhead map displaying player position, orientation, walls, and doors (toggled on/off). |
+| 🖱️ **Mouse Camera Control** | Allows smooth horizontal camera rotation using mouse movement. |
+| 💥 **Enhanced Collision** | Precise wall and closed-door collision detection to prevent clipping. | 
+
+
+---
+
 ## Instructions
 
 Use the `Makefile` to compile and manage the project:
 
 | Command | Description |
 |---------|-------------|
-| `make` | Compiles the mandatory version of `cub3D`. |
-| `make all` | Builds the complete mandatory project. |
+| `make` / `make all` | Compiles the mandatory version of `cub3D`. |
+| `make bonus` | Compiles the bonus version with interactive doors, minimap, and mouse control. |
 | `make clean` | Removes object files. |
 | `make fclean` | Removes object files and the compiled executable. |
 | `make re` | Removes all generated files and recompiles the project from scratch. |
@@ -59,13 +71,13 @@ Use the `Makefile` to compile and manage the project:
 After compilation:
 
 ```bash
-./cub3D path/to/map.cub
+./cub3D maps/valid_map.cub
 ```
 
 Example:
 
 ```bash
-./cub3D assets/maps/example.cub
+./cub3D maps/valid_door.cub
 ```
 
 ---
@@ -75,6 +87,20 @@ Example:
 - [Lode's Computer Graphics Tutorial – Raycasting](https://lodev.org/cgtutor/raycasting.html)
 - [MiniLibX Documentation](https://harm-smits.github.io/42docs/libs/minilibx)
 - 42 School cub3D subject
+
+---
+
+## 🎮 Controls
+
+| Key / Action | Function |
+|--------------|----------|
+| `W` / `S` | Move forward / backward |
+| `A` / `D` | Strafe left / right |
+| `Left` / `Right` Arrows | Rotate camera view |
+| `Mouse Movement` | Smooth horizontal camera rotation *(Bonus)* |
+| `E` | Open / Close door in front *(Bonus)* |
+| `M` | Toggle 2D Minimap *(Bonus)* |
+| `ESC` / `[X]` Button | Exit the game cleanly |
 
 ### AI Usage
 
