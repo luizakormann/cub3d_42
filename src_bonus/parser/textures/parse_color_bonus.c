@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_color_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 20:19:28 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:16:00 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 20:19:28 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:50:36 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

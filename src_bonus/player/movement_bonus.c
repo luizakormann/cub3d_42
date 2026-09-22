@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 18:13:34 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:20:41 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/16 18:13:34 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:52:25 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

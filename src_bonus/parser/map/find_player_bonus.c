@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_player_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 23:29:02 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:15:25 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 23:29:02 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:51:38 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

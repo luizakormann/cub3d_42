@@ -96,6 +96,7 @@ val_leaks: all
 # clean
 clean:
 	@$(RM) $(OBJ_DIR)
+	@$(RM) $(OBJ_D_BONUS)
 	@$(MAKE) clean -C $(LIBFT_DIR) --silent
 	@echo "objects removed."
 

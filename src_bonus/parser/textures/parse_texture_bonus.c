@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_texture_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 17:49:37 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:16:12 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 17:49:37 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:50:12 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

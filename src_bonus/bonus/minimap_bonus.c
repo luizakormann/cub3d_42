@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 21:16:34 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 21:18:32 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/21 21:16:34 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:44:36 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
-# define MM_CELL 6
-# define MM_OX 10
-# define MM_OY 10
+#define MM_CELL 6
+#define MM_OX 10
+#define MM_OY 10
 
 static int	cell_color(char c, t_door *door);
 static void	draw_cell(t_game *game, int gx, int gy);

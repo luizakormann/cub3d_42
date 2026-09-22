@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_elements.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 16:59:12 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/19 00:15:58 by kaidda-s         ###   ########.fr       */
+/*   Created: 2026/09/10 16:59:12 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:46:11 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

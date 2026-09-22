@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:12:38 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 21:26:16 by lukorman            ###   ########.fr       */
+/*   Updated: 2026/09/21 23:57:06 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_ray
 void	init_ray(t_game *game, t_ray *ray, int x);
 void	perform_dda(t_game *game, t_ray *ray);
 void	draw_wall(t_game *game, t_ray *ray, int x);
+void	draw_texture_slice(t_game *game, t_ray *ray, t_image *tex, int x);
 void	render_rays(t_game *game);
 
 #endif

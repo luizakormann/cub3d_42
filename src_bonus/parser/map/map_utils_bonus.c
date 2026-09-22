@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 23:26:40 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:15:10 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 23:26:40 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:51:20 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_textures_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 17:31:45 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:21:36 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/16 17:31:45 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/22 00:03:24 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

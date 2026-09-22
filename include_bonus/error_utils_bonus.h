@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_utils_bonus.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 17:41:49 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 20:12:36 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 17:41:49 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:47:11 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

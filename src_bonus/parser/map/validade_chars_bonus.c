@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validade_chars_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 23:24:49 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 21:41:07 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/10 23:24:49 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:50:58 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

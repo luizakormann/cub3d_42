@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validade_chars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 23:24:49 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/19 00:34:59 by kaidda-s         ###   ########.fr       */
+/*   Created: 2026/09/10 23:24:49 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:45:57 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

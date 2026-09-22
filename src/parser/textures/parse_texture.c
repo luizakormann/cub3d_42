@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaidda-s <kaidda-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 17:49:37 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/19 00:14:39 by kaidda-s         ###   ########.fr       */
+/*   Created: 2026/09/10 17:49:37 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:46:15 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

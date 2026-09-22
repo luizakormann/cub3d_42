@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lukorman <lukorman@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lukorman <lukorman@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 21:17:37 by lukorman             #+#    #+#             */
-/*   Updated: 2026/09/21 21:44:26 by lukorman            ###   ########.fr       */
+/*   Created: 2026/09/21 21:17:37 by lukorman          #+#    #+#             */
+/*   Updated: 2026/09/21 23:47:08 by lukorman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define KEY_E 101
 # define KEY_M 109
 # define EVENT_MOTION 6
-# define MASK_MOTION (1L << 6)
+# define MASK_MOTION 64
 # define DOOR_COLOR 0x5C3A21
 # define DOOR_OPEN_COLOR 0x8B5A2B
 # define DOOR_OPEN_TIME 180
