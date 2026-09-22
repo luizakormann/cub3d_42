@@ -6,16 +6,19 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:07:09 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/21 20:20:32 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:34:21 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "player_bonus.h"
+#include "bonus.h"
 
 int	is_wall(t_game *game, double x, double y)
 {
-	int	mx;
-	int	my;
+	int		mx;
+	int		my;
+	char	c;
+	t_door	*door;
 
 	mx = (int)x;
 	my = (int)y;
@@ -23,5 +26,11 @@ int	is_wall(t_game *game, double x, double y)
 		return (1);
 	if (mx >= (int)ft_strlen(game->map.grid[my]))
 		return (1);
-	return (game->map.grid[my][mx] == '1' || game->map.grid[my][mx] == ' ');
+	c = game->map.grid[my][mx];
+	if (c == 'D')
+	{
+		door = get_door(game, mx, my);
+		return (!(door && door->is_open));
+	}
+	return (c == '1' || c == ' ');
 }

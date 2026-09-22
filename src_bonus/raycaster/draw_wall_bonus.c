@@ -6,11 +6,12 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 23:13:52 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 20:21:02 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:37:57 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycasting_bonus.h"
+#include "bonus.h"
 
 static void	setup_wall_calc(t_game *game, t_ray *ray)
 {
@@ -77,6 +78,18 @@ static int	compute_tex_x(t_ray *ray, t_image *tex)
 	return (tex_x);
 }
 
+static void	draw_door_slice(t_game *game, t_ray *ray, int x)
+{
+	int	y;
+
+	y = ray->draw_start;
+	while (y <= ray->draw_end)
+	{
+		put_pixel(&game->image, x, y, DOOR_COLOR);
+		y++;
+	}
+}
+
 void	draw_wall(t_game *game, t_ray *ray, int x)
 {
 	t_image	*tex;
@@ -86,6 +99,11 @@ void	draw_wall(t_game *game, t_ray *ray, int x)
 	int		y;
 
 	setup_wall_calc(game, ray);
+	if (ray->is_door)
+	{
+		draw_door_slice(game, ray, x);
+		return ;
+	}
 	set_tex_id(ray);
 	tex = &game->textures[ray->tex_id];
 	tex_x = compute_tex_x(ray, tex);

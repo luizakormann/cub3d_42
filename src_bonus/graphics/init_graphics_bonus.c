@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 13:59:42 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 20:13:46 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:39:28 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	destroy_graphics(t_game *game)
 	}
 	if (game->image.ptr)
 		mlx_destroy_image(game->mlx_ptr, game->image.ptr);
+	if (game->doors)
+		free(game->doors);
 	if (game->window)
 		mlx_destroy_window(game->mlx_ptr, game->window);
 	if (game->mlx_ptr)

@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 23:24:49 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/21 20:14:56 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:41:07 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			validate_map_chars(t_data *data);
 static int	is_valid_char(char c)
 {
 	return (c == '0' || c == '1' || c == 'N' || c == 'S'
-		|| c == 'E' || c == 'W' || c == ' ');
+		|| c == 'E' || c == 'W' || c == 'D' || c == ' ');
 }
 
 int	validate_map_chars(t_data *data)

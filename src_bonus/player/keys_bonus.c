@@ -6,11 +6,12 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:25:12 by luiza             #+#    #+#             */
-/*   Updated: 2026/09/21 20:20:37 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:32:19 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "player_bonus.h"
+#include "bonus.h"
 
 static void	set_key(t_game *game, int keycode, int value)
 {
@@ -38,7 +39,12 @@ int	key_press(int keycode, void *param)
 		mlx_loop_end(game->mlx_ptr);
 		return (0);
 	}
-	set_key(game, keycode, 1);
+	if (keycode == KEY_E)
+		toggle_door(game);
+	else if (keycode == KEY_M)
+		game->show_minimap = !game->show_minimap;
+	else
+		set_key(game, keycode, 1);
 	return (0);
 }
 

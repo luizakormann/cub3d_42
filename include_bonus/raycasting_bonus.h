@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:12:38 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 20:13:19 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:26:16 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_ray
 	int			draw_end;
 	double		wall_x;
 	t_tex_id	tex_id;
+	int			is_door;
 }	t_ray;
 
 void	init_ray(t_game *game, t_ray *ray, int x);

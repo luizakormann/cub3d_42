@@ -6,15 +6,30 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:18:30 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 20:20:58 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:36:07 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycasting_bonus.h"
+#include "bonus.h"
 
-static int	is_wall(t_game *game, t_ray *ray)
+static int	check_hit(t_game *game, t_ray *ray)
 {
-	return (game->map.grid[ray->map_y][ray->map_x] == '1');
+	char	c;
+	t_door	*door;
+
+	c = game->map.grid[ray->map_y][ray->map_x];
+	if (c == '1')
+		return (1);
+	if (c == 'D')
+	{
+		door = get_door(game, ray->map_x, ray->map_y);
+		if (door && door->is_open)
+			return (0);
+		ray->is_door = 1;
+		return (1);
+	}
+	return (0);
 }
 
 void	perform_dda(t_game *game, t_ray *ray)
@@ -22,6 +37,7 @@ void	perform_dda(t_game *game, t_ray *ray)
 	int	hit;
 
 	hit = 0;
+	ray->is_door = 0;
 	while (!hit)
 	{
 		if (ray->side_dist_x < ray->side_dist_y)
@@ -36,7 +52,7 @@ void	perform_dda(t_game *game, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		hit = is_wall(game, ray);
+		hit = check_hit(game, ray);
 	}
 	if (ray->side == 0)
 		ray->perp_wall_dist = ray->side_dist_x - ray->delta_dist_x;

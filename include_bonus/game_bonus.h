@@ -6,7 +6,7 @@
 /*   By: luiza <luiza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 23:51:13 by kaidda-s          #+#    #+#             */
-/*   Updated: 2026/09/21 20:12:46 by luiza            ###   ########.fr       */
+/*   Updated: 2026/09/21 21:24:38 by luiza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ typedef struct s_keys
 	int	right;
 }	t_keys;
 
+typedef struct s_door
+{
+	int	x;
+	int	y;
+	int	is_open;
+	int	timer;
+}	t_door;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
@@ -61,6 +69,9 @@ typedef struct s_game
 	t_keys		keys;
 	int			floor_color;
 	int			ceiling_color;
+	t_door		*doors;
+	int			door_count;
+	int			show_minimap;
 }	t_game;
 
 int		init_graphics(t_game *game);
