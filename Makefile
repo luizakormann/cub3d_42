@@ -82,8 +82,12 @@ $(LIBFT_DIR)/Makefile $(MLX_DIR)/Makefile:
 $(LIBFT): $(LIBFT_DIR)/Makefile
 	@$(MAKE) -C $(LIBFT_DIR) --silent
 
-$(MLX):
-	@$(MAKE) -C $(MLX_DIR) --silent
+MLX_LOG	= $(OBJ_DIR)mlx.log
+
+$(MLX): $(MLX_DIR)/Makefile
+	@mkdir -p $(OBJ_DIR)
+	@$(MAKE) -C $(MLX_DIR) > $(MLX_LOG) 2>&1 \
+		|| (cat $(MLX_LOG); exit 1)
 
 # valgrind
 LEAKS	:=	valgrind --leak-check=full --show-leak-kinds=all\
