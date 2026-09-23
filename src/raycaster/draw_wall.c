@@ -42,9 +42,9 @@ static void	set_tex_id(t_ray *ray)
 	else
 	{
 		if (ray->ray_dir_y > 0)
-			ray->tex_id = TEX_NO;
-		else
 			ray->tex_id = TEX_SO;
+		else
+			ray->tex_id = TEX_NO;
 	}
 }
 
