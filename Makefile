@@ -89,12 +89,15 @@ $(MLX): $(MLX_DIR)/Makefile
 	@$(MAKE) -C $(MLX_DIR) > $(MLX_LOG) 2>&1 \
 		|| (cat $(MLX_LOG); exit 1)
 
-# valgrind
-LEAKS	:=	valgrind --leak-check=full --show-leak-kinds=all\
-		--track-origins=yes --log-file=valgrind-out.txt --track-fds=yes
 
-val_leaks: all
-	@$(LEAKS) ./$(NAME) maps/open_map.cub
+# valgrind
+SUPP	= mlx.supp
+LEAKS	:=	valgrind --leak-check=full --show-leak-kinds=all\
+		--track-origins=yes --suppressions=$(SUPP) --track-fds=yes\
+		--log-file=valgrind-out.txt
+
+val_leaks: bonus
+	@$(LEAKS) ./$(NAME) maps/valid_door.cub
 	@echo "./cub3d ready to use with valgrind"
 
 # clean
