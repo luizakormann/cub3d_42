@@ -78,5 +78,6 @@ int	main(int argc, char **argv)
 	mlx_loop(game.mlx_ptr);
 	destroy_graphics(&game);
 	free_data(&data);
+	ft_putstr_fd("See you later, alligator!\n", 2);
 	return (0);
 }
